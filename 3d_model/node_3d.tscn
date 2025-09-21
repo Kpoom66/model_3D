@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://bim15hsq07t1k"]
+
+[ext_resource type="PackedScene" uid="uid://fbl1n1pud0vk" path="res://Walking.tscn" id="1_a202f"]
+[ext_resource type="Script" uid="uid://bywkk2diea5yq" path="res://node_3d.gd" id="1_noarx"]
+[ext_resource type="Texture2D" uid="uid://ctg4fk37iv7lh" path="res://asset/551cb596b08e71a13cabefed617c9a16.jpg" id="3_wc5p8"]
+[ext_resource type="PackedScene" uid="uid://bdlt7il3ttgn2" path="res://asset/Big Building.glb" id="4_jsk3o"]
+[ext_resource type="PackedScene" uid="uid://gtvh1j56xwpf" path="res://asset/Fantasy House.glb" id="5_4arys"]
+[ext_resource type="PackedScene" uid="uid://cf5u8g1j83kyx" path="res://asset/Storage House.glb" id="6_6iypd"]
+[ext_resource type="PackedScene" uid="uid://dv865kmh1phnv" path="res://asset/Business Building.glb" id="7_tereu"]
+[ext_resource type="PackedScene" uid="uid://dt7gidbtnwbhy" path="res://asset/AIRCO DH2 v2.glb" id="8_jsk3o"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_noarx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdqbm"]
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("3_wc5p8")
+albedo_texture_force_srgb = true
+rim_enabled = true
+rim = 0.39
+rim_tint = 0.49
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_noarx")
+
+[node name="Strut Walking" parent="." instance=ExtResource("1_a202f")]
+
+[node name="Strut Walking4" parent="." instance=ExtResource("1_a202f")]
+transform = Transform3D(0.911655, 0.410958, 0, -0.410958, 0.911655, 0, 0, 0, 1, -3.8129, 0, -11.3297)
+
+[node name="Strut Walking2" parent="." instance=ExtResource("1_a202f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35969, 0, -1.57119)
+
+[node name="Strut Walking3" parent="." instance=ExtResource("1_a202f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.10225, 0, -1.53454)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.999925, 0.012217, 0, -0.00863872, 0.707054, 0.707107, 0.00863872, -0.707054, 0.707107, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.943928, 0.330152, 0, -0.330152, 0.943928, 0, 4.88236, 7.34984)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(19.2989, 0, 0, 0, 1, 0, 0, 0, 23.2565, 0, 0, 0)
+mesh = SubResource("PlaneMesh_noarx")
+surface_material_override/0 = SubResource("StandardMaterial3D_cdqbm")
+
+[node name="Root Scene" parent="." instance=ExtResource("4_jsk3o")]
+transform = Transform3D(0.876402, 0, 1.06767, 0, 2.25048, 0, -2.07281, 0, 0.451418, -7.09017, 0, -6.61956)
+
+[node name="Root Scene2" parent="." instance=ExtResource("5_4arys")]
+transform = Transform3D(1.37234, 0, -3.50463, 0, 5.16924, 0, 5.18859, 0, 0.926943, 9.54169, -0.0949793, -14.0964)
+
+[node name="Root Scene3" parent="." instance=ExtResource("6_6iypd")]
+transform = Transform3D(3.24463, 0, 7.00216, 0, 7.00172, 0, -6.20455, 0, 3.66173, -4.96497, 0, -18.365)
+
+[node name="Root Scene4" parent="." instance=ExtResource("7_tereu")]
+transform = Transform3D(1.37944, 0, -5.12129, 0, 8.27496, 0, 8.15918, 0, 0.865834, 11.9545, 0, -4.7578)
+
+[node name="AIRCO DH2 v2" parent="." instance=ExtResource("8_jsk3o")]
+transform = Transform3D(-0.985665, 0, -0.168713, 0, 1, 0, 0.168713, 0, -0.985665, -5.44384, 1.04769, 3.84529)
+
+[node name="Root Scene5" parent="." instance=ExtResource("7_tereu")]
+transform = Transform3D(2.83863, 0, 5.62317, 0, 7.073, 0, -10.574, 0, 1.50956, -17.8909, 0, 0.511629)
+
+[node name="Root Scene6" parent="." instance=ExtResource("4_jsk3o")]
+transform = Transform3D(1.97099, 0, -0.561058, 0, 2.38106, 0, 1.33591, 0, 0.827776, 6.68827, 0, -24.2775)
